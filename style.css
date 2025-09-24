@@ -1,0 +1,217 @@
+/* === BASIS === */
+body {
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.section-title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+/* === HEADER === */
+.headerbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #ff6a5f, #ffca5f);
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.brand .highlight {
+  color: #111;
+}
+
+.navlinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.navlinks a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navlinks a.active {
+  text-decoration: underline;
+}
+
+/* === CATEGORY GRID === */
+.category-grid {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.category-card {
+  flex: 1;
+  min-height: 120px;
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-card span {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* === PRODUKT GRID === */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.product {
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  position: relative;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product h3 {
+  font-size: 1.05rem;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-weight: 700;
+  color: #008a2e;
+}
+
+/* Udsolgt */
+.sold_out {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.sold_out .udsolgt_tekst {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: red;
+  pointer-events: none;
+}
+
+/* === PRODUKT DETAIL === */
+.product-detail {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.product-images img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-info h2 {
+  margin-bottom: 0.5rem;
+}
+
+.type {
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.back {
+  background: #ccc;
+  color: #111;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.sale .price {
+  color: #c10000;
+  /* rød farve for tilbud */
+}
+
+.discount-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #c10000;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
