@@ -32,3 +32,15 @@ function summesumme(a, b) {
 
 console.log(summesumme("Peter ", "Jørgensen"));
 console.log(summesumme(10, 20));
+const productid = 1528;
+const imagePath = `https://kea-alt-del.dk/t7/images/webp/640/${productid}.webp`;
+
+document.querySelector("#productContainer").innerHTML = `
+  <article class="product sale">
+    <img src="${imagePath}" alt="Black Fleece Jacket">
+    <h3>Black Fleece Jacket</h3>
+    <p class="price">1999 kr</p>
+    <p class="old-price">3999 kr</p>
+    <div class="discount-badge">-50%</div>
+  </article>
+`;
