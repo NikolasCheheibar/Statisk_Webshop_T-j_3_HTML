@@ -92,35 +92,86 @@ h3 {
   margin: auto;
 }
 
+/* Produktkort */
 .product-link {
   text-decoration: none;
   color: inherit;
 }
 
 .product {
+  display: grid;
+
+  /* Firefox: subgrid giver ens linjer */
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+
+  /* Chrome fallback */
+  text-align: center;
+
   border: 1px solid #e0e0e0;
   padding: 1rem;
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
-  text-align: center;
   position: relative;
 }
 
 .product img {
-  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 1/1;
+  /* fallback: ens højde/bredde-forhold */
+  object-fit: cover;
+  /* beskær i stedet for at strække */
   border-radius: 8px;
-  margin-bottom: 0.5rem;
+  margin: 0;
+  grid-row: 1;
+  /* til Firefox subgrid */
 }
 
 .product h3 {
   font-size: 1.05rem;
   margin: 0.5rem 0;
+  grid-row: 2;
 }
 
+.price,
+.old-price {
+  grid-row: 3;
+}
+
+.readmore,
+.discount-badge,
+.udsolgt_tekst {
+  grid-row: 4;
+}
+
+/* Priser */
 .price {
   font-weight: 700;
   color: #008a2e;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.sale .price {
+  color: #c10000;
+}
+
+/* Rabatbadge */
+.discount-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #c10000;
+  color: #fff;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
 }
 
 /* Udsolgt */
@@ -132,13 +183,13 @@ h3 {
 .sold_out .udsolgt_tekst {
   position: absolute;
   top: 10px;
-  right: 10px;
-  background: #fff;
+  left: 10px;
+  background: #444;
+  color: #fff;
   padding: 4px 8px;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: bold;
-  color: red;
   pointer-events: none;
 }
 
@@ -191,27 +242,4 @@ h3 {
 .btn.back {
   background: #ccc;
   color: #111;
-}
-
-.old-price {
-  text-decoration: line-through;
-  color: #888;
-  font-size: 0.9rem;
-}
-
-.sale .price {
-  color: #c10000;
-  /* rød farve for tilbud */
-}
-
-.discount-badge {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: #c10000;
-  color: #fff;
-  font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.85rem;
 }
