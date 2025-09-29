@@ -1,36 +1,21 @@
 /** @format */
-// Hent id fra URL
+
 const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const id = parseInt(params.get("id"));
 
-const info = document.getElementById("product-info");
-const img = document.getElementById("product-img");
+const products = [
+  { id: 1, category: "shoes", name: "Sneakers", description: "Lækre sneakers til hverdagsbrug." },
+  { id: 2, category: "jackets", name: "Læderjakke", description: "Stilet sort læderjakke." },
+  { id: 3, category: "shoes", name: "Støvler", description: "Varme vinterstøvler." },
+  { id: 4, category: "accessories", name: "Ur", description: "Elegant ur i stål." },
+];
 
-if (!id) {
-  info.innerHTML = "<p>Produkt ikke fundet.</p>";
+const product = products.find((p) => p.id === id);
+
+if (product) {
+  document.querySelector("#product-name").textContent = product.name;
+  document.querySelector("#product-description").textContent = product.description;
 } else {
-  fetch("https://kea-alt-del.dk/t7/api/products/" + id)
-    .then((res) => res.json())
-    .then((product) => showProduct(product))
-    .catch(() => {
-      info.innerHTML = "<p>Fejl ved indlæsning af produkt.</p>";
-    });
-}
-
-function showProduct(product) {
-  img.src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
-  img.alt = product.productdisplayname;
-
-  info.innerHTML = `
-    <h2>${product.productdisplayname}</h2>
-    <p class="type">${product.articletype} | ${product.brandname}</p>
-    <p class="price">DKK ${product.price},-</p>
-    <p class="description">${product.description || "Ingen beskrivelse"}</p>
-    ${product.soldout ? '<p class="udsolgt_tekst">Udsolgt</p>' : ""}
-    ${product.discount ? `<span class="discount-badge">-${product.discount}%</span>` : ""}
-    <div class="actions">
-      <button class="btn buy" ${product.soldout ? "disabled" : ""}>Læg i kurv</button>
-      <a href="produktliste.html" class="btn back">← Tilbage</a>
-    </div>
-  `;
+  document.querySelector("#product-name").textContent = "Produkt ikke fundet";
+  document.querySelector("#product-description").textContent = "";
 }
