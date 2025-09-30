@@ -1,11 +1,129 @@
+/* Globalt */
 body {
   font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  margin: 20px;
+  margin: 0;
+  padding: 1rem;
+  background-color: #f5f5f5;
 }
-h1 { color: #333 }
-ul { list-style: none; padding: 0 }
-li { margin: 10px 0; display: flex; align-items: center; gap: 10px }
-a { text-decoration: none; color: #0077cc }
-a:hover { text-decoration: underline }
-img { border: 1px solid #ddd; border-radius: 4px }
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Liste over kategorier */
+#categories {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#categories li a {
+  display: block;
+  padding: 0.8rem 1.2rem;
+  background-color: #ff9900;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+#categories li a:hover {
+  background-color: #e68a00;
+}
+
+/* Produktliste grid */
+#products {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Kort for hvert produkt */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Billede */
+.imageContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.imageContainer img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+/* Sold Out overlay */
+.soldOut {
+  opacity: 0.5;
+}
+
+.imageContainer p {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: red;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Produktnavn */
+.card a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  display: block;
+}
+
+/* Pris container */
+.discounted_container {
+  text-align: center;
+  width: 100%;
+}
+
+.discounted_container p {
+  margin: 0.2rem 0;
+  font-weight: bold;
+}
+
+/* Rabat */
+.discounted_container.discount .price {
+  text-decoration: line-through;
+  color: red;
+}
+
+.discounted_container.discount p:last-child {
+  color: green;
+}

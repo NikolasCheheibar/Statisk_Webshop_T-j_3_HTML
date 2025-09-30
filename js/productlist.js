@@ -1,15 +1,17 @@
+/** @format */
+
 const params = new URLSearchParams(window.location.search);
 const category = params.get("category");
 const productsUl = document.getElementById("products");
 
 fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
-  .then(res => res.json())
-  .then(products => {
+  .then((res) => res.json())
+  .then((products) => {
     if (!products || products.length === 0) {
       productsUl.innerHTML = "<li>Ingen produkter i denne kategori</li>";
       return;
     }
-    products.forEach(product => {
+    products.forEach((product) => {
       const li = document.createElement("li");
 
       const a = document.createElement("a");
@@ -26,7 +28,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
       productsUl.appendChild(li);
     });
   })
-  .catch(err => {
+  .catch((err) => {
     productsUl.innerHTML = "<li>Kunne ikke hente produkter</li>";
     console.error(err);
   });
