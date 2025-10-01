@@ -1,68 +1,68 @@
 /* Kort layout */
 #products {
-    margin: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 /* Card styling */
 .card {
-    border: 1px solid darkgray;
-    border-radius: 1rem;
-    padding: 1rem;
-    background: #f4f4f4;
-    filter: drop-shadow(3px 3px 4px darkgray);
+  border: 1px solid darkgray;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #f4f4f4;
+  filter: drop-shadow(3px 3px 4px darkgray);
 }
 
 /* Billeder i kort */
 .card img {
-    width: 100%;
-    /* Fylder hele card-bredden */
-    max-height: 200px;
-    /* Maks højde */
-    object-fit: cover;
-    /* Klipper billedet hvis det er for højt */
-    border-radius: 0.5rem;
-    display: block;
-    margin: 0 auto;
+  width: 100%;
+  /* Fylder hele card-bredden */
+  max-height: 200px;
+  /* Maks højde */
+  object-fit: cover;
+  /* Klipper billedet hvis det er for højt */
+  border-radius: 0.5rem;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Sold out overlay */
 .imageContainer p {
-    display: none;
-    position: absolute;
+  display: none;
+  position: absolute;
 }
 
 .soldOut .imageContainer p {
-    display: block;
-    color: red;
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.3rem;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+  display: block;
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Discount styling */
 .discount .price {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .discounted_container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 
 .discounted_container p:nth-child(2) {
-    color: red;
-    background-color: white;
-    padding: 0 0.2rem;
-    border-radius: 0.2rem;
+  color: red;
+  background-color: white;
+  padding: 0 0.2rem;
+  border-radius: 0.2rem;
 }
