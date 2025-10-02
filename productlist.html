@@ -2,15 +2,48 @@
 <html lang="da">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkter</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Produkter - FashionRus</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <h1>Produkter</h1>
-    <section id="products"></section>
+    <header class="site-header">
+        <h1>Produkter</h1>
+    </header>
+
+    <main class="container">
+        <section class="toolbar">
+            <div class="breadcrumb"><a href="index.html">Kategorier</a> › <span id="currentCategory"></span></div>
+
+            <div class="filters">
+                <input id="search" type="search" placeholder="Søg produkter..." aria-label="Søg produkter" />
+                <select id="brandSelect" aria-label="Filtrer på brand">
+                    <option value="">Alle brands</option>
+                </select>
+                <label for="priceRange">Maks pris: <span id="priceValue">0</span> DKK</label>
+                <input id="priceRange" type="range" min="0" max="5000" step="10" />
+                <label><input id="inStock" type="checkbox" /> Kun på lager</label>
+                <select id="sort" aria-label="Sortér">
+                    <option value="relevance">Relevans</option>
+                    <option value="priceAsc">Pris stigende</option>
+                    <option value="priceDesc">Pris faldende</option>
+                    <option value="discount">Størst rabat</option>
+                </select>
+                <button id="clearFilters">Nulstil filtre</button>
+            </div>
+        </section>
+
+        <section id="products" class="product-grid" aria-live="polite">
+            <p class="loading">Henter produkter…</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© FashionRus</p>
+    </footer>
+
     <script src="js/productlist.js" defer></script>
 </body>
 
